@@ -17,6 +17,13 @@ Card Deck::nextCard() {
   return c;
 }
 
+void Deck::discardNext() {
+  //This is meant for testing only.. Don't use in a real env as it reports the discard.
+  Card c = this->deck.front();
+  std::cout << "Discarding " << c.toS() << std::endl;
+  this->deck.erase(this->deck.begin());
+}
+
 void Deck::shuffle(int times) {
   std::srand ( unsigned ( std::time(0) ) );
   std::cout << "Shuffling deck " << times << " times." << std::endl;

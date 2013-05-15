@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall
-PROG = poker
+PROG = game
 
 SRCS = Card.cpp Deck.cpp Pot.cpp Hand.cpp Player.cpp poker.cpp
 

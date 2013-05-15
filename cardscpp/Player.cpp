@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <iostream>
 
 Player::Player(std::string n, int startingCash, int seat) {
   this->name = n;
@@ -21,6 +22,7 @@ void Player::setHand(Hand* h) {
 }
 
 void Player::addCard(Card c) {
+  std::cout << "Added " << c.toS() << " to player " << this->name << "'s hand." << std::endl;
   this->hand->addCard(c);
 }
 

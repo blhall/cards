@@ -9,5 +9,6 @@ class Hand {
     Hand();
     std::vector<Card> cards;
     void addCard(Card c);
+    void listCards();
     void clear();
 };

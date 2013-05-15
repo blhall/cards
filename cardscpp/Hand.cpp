@@ -1,16 +1,24 @@
 #include "Hand.h"
 #include <vector> //std::Vector
 #include <algorithm> //std::sort
+#include <iostream>
 
 Hand::Hand() {
 }
 
 void Hand::addCard(Card card) {
+  std::cout << "Added " << card.toS() << " to hand." << std::endl;
   this->cards.push_back(card);
 }
 
 void Hand::clear() {
   this->cards.erase( this->cards.begin(), this->cards.end() );
+}
+
+void Hand::listCards() {
+  for(unsigned int i = 0; i < this->cards.size(); i++) {
+    std::cout << this->cards[i].toS() << std::endl;
+  }
 }
 
 int Hand::checkHand() {
