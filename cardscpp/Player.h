@@ -11,10 +11,14 @@ class Player {
     int invested;
     bool allIn;
     int seat;
+    int betCount;
   public:
     Hand* hand;
     Player(std::string n, int startingCash, int seat);
     Hand* getHand();
+    int getBetCount();
+    void clearBetCount();
+    void check();
     void clearHand();
     void setHand(Hand* h);
     void addCard(Card c);

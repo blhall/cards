@@ -115,15 +115,15 @@ int Hand::checkHand(Hand* house) {
       highCard = i;
     }
     else if (mycount == 2) {
-      std::cout << "----> A Pair of " << i << "'s" << std::endl;
+      //std::cout << "----> A Pair of " << i << "'s" << std::endl;
       pairCount++;
     }
     else if (mycount == 3) {
-      std::cout << "----> Three of a kind with " << i << "'s" << std::endl;
+      //std::cout << "----> Three of a kind with " << i << "'s" << std::endl;
       tripCount++;
     }
     else if (mycount == 4) {
-      std::cout << "----> Four of a kind with " << i << "'s" << std::endl;
+      //std::cout << "----> Four of a kind with " << i << "'s" << std::endl;
       fourOfKind = true;
     }
   }
@@ -152,7 +152,7 @@ int Hand::checkHand(Hand* house) {
   //3000 + values of ranks added
   if (tripCount >= 1) {
     if (pairCount >= 1) {
-      std::cout << "---->  Full House!" << tripCount << std::endl;
+      std::cout << "---->  Full House!" << std::endl;
       this->handValue = 2000 + rankTotals;
       return this->handValue;
     }
@@ -193,7 +193,21 @@ int Hand::checkHand(Hand* house) {
     return this->handValue;
   }
   // High Card
-  std::cout << "---->  High card of !" << highCard << std::endl;
+  if (highCard == 11) {
+    std::cout << "---->  High card of Jack!" << std::endl;
+  }
+  else if (highCard == 12) {
+    std::cout << "---->  High card of Queen!" << std::endl;
+  }
+  else if (highCard == 13) {
+    std::cout << "---->  High card of King!" << std::endl;
+  }
+  else if (highCard == 14) {
+    std::cout << "---->  High card of Ace!" << std::endl;
+  }
+  else {
+    std::cout << "---->  High card of !" << highCard << std::endl;
+  }
   this->handValue = 100 + rankTotals;
 
   return this->handValue;
