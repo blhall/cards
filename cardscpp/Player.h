@@ -10,9 +10,9 @@ class Player {
     int cash;
     int invested;
     bool allIn;
-    Hand* hand;
     int seat;
   public:
+    Hand* hand;
     Player(std::string n, int startingCash, int seat);
     Hand* getHand();
     void clearHand();

@@ -33,42 +33,49 @@ void game(std::vector<Player*> players) {
       players[p]->addCard(mydeck->nextCard());
     }
   }
-  bettingLoop();
+//  bettingLoop();
 
   //Flop Logic
   //Discard top Card
-  std::cout << "Discarding top card." << std::endl;
+//  std::cout << "Discarding top card." << std::endl;
   //discards.push_back(mydeck->nextCard());
   mydeck->discardNext();  
-  std::cout << "The flop is..." << std::endl;
+//  std::cout << "The flop is..." << std::endl;
   for(int i = 0; i < 3; i++) {
     // We want three cards.
     house->addCard(mydeck->nextCard());
   }
-  bettingLoop();
+//  bettingLoop();
   
   //Turn Logic
   //Discard top Card
-  std::cout << "Discarding top card." << std::endl;
+//  std::cout << "Discarding top card." << std::endl;
   //discards.push_back(mydeck->nextCard());
   mydeck->discardNext();
-  std::cout << "The turn is..." << std::endl;
+//  std::cout << "The turn is..." << std::endl;
   //Draw turn card
   house->addCard(mydeck->nextCard());
-  bettingLoop();
+//  bettingLoop();
   
   //River Logic
   //Discard top Card
-  std::cout << "Discarding top card." << std::endl;
+//  std::cout << "Discarding top card." << std::endl;
   //discards.push_back(mydeck->nextCard());
   mydeck->discardNext();
-  std::cout << "The river is..." << std::endl;
+//  std::cout << "The river is..." << std::endl;
   //Draw river card.
   house->addCard(mydeck->nextCard());
-  bettingLoop();
+//  bettingLoop();
   //ShowDown Logic
-  std::cout << "The house has:" << std::endl;
+//  std::cout << "The house has:" << std::endl;
   house->listCards();
+
+  //For each player, determine hands
+  for(unsigned int p = 0; p < players.size(); p++) {
+     // For each player
+    std::cout << "Player " << players[p]->getName() << " has:" << std::endl;
+    players[p]->hand->checkHand(house);
+  }
 }
 
 int main ()
